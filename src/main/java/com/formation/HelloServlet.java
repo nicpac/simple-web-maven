@@ -23,6 +23,5 @@ public class HelloServlet extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
+
 }
-}
-zinzin
