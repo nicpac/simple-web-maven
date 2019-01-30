@@ -3,17 +3,11 @@ pipeline {
   tools {
     maven 'localMaven'
   }
-    stages{
-        stage('Build'){
+    stage ('Clean Package'){
             steps {
-                bat 'mvn clean package'
+                build job: 'simple-java-maven-job'
             }
-            post {
-                success {
-                    echo 'Now Archiving...'
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
+       
         }
         stage ('Deploy to Staging'){
             steps {
